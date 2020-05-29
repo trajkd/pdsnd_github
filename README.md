@@ -5,7 +5,7 @@ Friday, 29th May 2020
 Post your work on GitHub
 
 ### Description
-Describe what your project is about and what it does
+Learn how to use version control and share your work with other people in the data science industry.
 
 ### Files used
 Include the files used
