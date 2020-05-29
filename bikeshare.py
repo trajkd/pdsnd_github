@@ -228,37 +228,33 @@ def main():
         
         view_data = input('\nWould you like to view individual trip data? Type yes or no.\n')
         if view_data.lower() == 'yes':
-            for i in range(5):
+            data = "{'': '" + str(i) + "',\
+                    'Start Station': '" + str(df.iloc[[i]]['Start Station'].values[0]) + "',\
+                    'Start Time': '" + str(df.iloc[[i]]['Start Time'].values[0]) + "',\
+                    'End Station': '" + str(df.iloc[[i]]['End Station'].values[0]) + "',\
+                    'End Time': '" + str(df.iloc[[i]]['End Time'].values[0]) + "',\
+                    'Trip Duration': '" + str(df.iloc[[i]]['Trip Duration'].values[0]) + "',\
+                    'User Type': '" + str(df.iloc[[i]]['User Type'].values[0]) + "',\
+                    'Gender': '" + str(df.iloc[[i]]['Gender'].values[0]) + "',\
+                    'Birth Year': '" + str(df.iloc[[i]]['Birth Year'].values[0]) + "'}"
+            data = data.replace("'", "\"")
+            parsed = json.loads(data)
+            print(json.dumps(parsed))
+            see_next = input('\nSee next trip data? Type yes or no.\n')
+            while see_next.lower() == 'yes':
                 data = "{'': '" + str(i) + "',\
-                        'Start Station': '" + str(df.iloc[[i]]['Start Station'].values[0]) + "',\
-                        'Start Time': '" + str(df.iloc[[i]]['Start Time'].values[0]) + "',\
-                        'End Station': '" + str(df.iloc[[i]]['End Station'].values[0]) + "',\
-                        'End Time': '" + str(df.iloc[[i]]['End Time'].values[0]) + "',\
-                        'Trip Duration': '" + str(df.iloc[[i]]['Trip Duration'].values[0]) + "',\
-                        'User Type': '" + str(df.iloc[[i]]['User Type'].values[0]) + "',\
-                        'Gender': '" + str(df.iloc[[i]]['Gender'].values[0]) + "',\
-                        'Birth Year': '" + str(df.iloc[[i]]['Birth Year'].values[0]) + "'}"
+                    'Start Station': '" + str(df.iloc[[i]]['Start Station'].values[0]) + "',\
+                    'Start Time': '" + str(df.iloc[[i]]['Start Time'].values[0]) + "',\
+                    'End Station': '" + str(df.iloc[[i]]['End Station'].values[0]) + "',\
+                    'End Time': '" + str(df.iloc[[i]]['End Time'].values[0]) + "',\
+                    'Trip Duration': '" + str(df.iloc[[i]]['Trip Duration'].values[0]) + "',\
+                    'User Type': '" + str(df.iloc[[i]]['User Type'].values[0]) + "',\
+                    'Gender': '" + str(df.iloc[[i]]['Gender'].values[0]) + "',\
+                    'Birth Year': '" + str(df.iloc[[i]]['Birth Year'].values[0]) + "'}"
                 data = data.replace("'", "\"")
                 parsed = json.loads(data)
                 print(json.dumps(parsed))
-            j = 0
-            see_next = input('\nSee next? Type yes or no.\n')
-            while see_next.lower() == 'yes':
-                j += 1
-                for i in range(j*5,j*5+5):
-                    data = "{'': '" + str(i) + "',\
-                        'Start Station': '" + str(df.iloc[[i]]['Start Station'].values[0]) + "',\
-                        'Start Time': '" + str(df.iloc[[i]]['Start Time'].values[0]) + "',\
-                        'End Station': '" + str(df.iloc[[i]]['End Station'].values[0]) + "',\
-                        'End Time': '" + str(df.iloc[[i]]['End Time'].values[0]) + "',\
-                        'Trip Duration': '" + str(df.iloc[[i]]['Trip Duration'].values[0]) + "',\
-                        'User Type': '" + str(df.iloc[[i]]['User Type'].values[0]) + "',\
-                        'Gender': '" + str(df.iloc[[i]]['Gender'].values[0]) + "',\
-                        'Birth Year': '" + str(df.iloc[[i]]['Birth Year'].values[0]) + "'}"
-                    data = data.replace("'", "\"")
-                    parsed = json.loads(data)
-                    print(json.dumps(parsed))
-                see_next = input('\nSee next? Type yes or no.\n')
+                see_next = input('\nSee next trip data? Type yes or no.\n')
 
         
         restart = input('\nWould you like to restart? Enter yes or no.\n')
