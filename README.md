@@ -1,8 +1,9 @@
+# Post your work on GitHub
+
+---
+
 ### Date created
 Friday, 29th May 2020
-
-### Project Title
-Post your work on GitHub
 
 ### Description
 Learn how to use version control and share your work with other people in the data science industry.
