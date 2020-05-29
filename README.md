@@ -13,4 +13,5 @@ Learn how to use version control and share your work with other people in the da
 
 ### Credits
 From the [Programming For Data Science with Python Nanodegree program](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104).
+Dejan Trajkovic
 
