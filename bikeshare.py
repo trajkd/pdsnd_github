@@ -240,7 +240,7 @@ def main():
             data = data.replace("'", "\"")
             parsed = json.loads(data)
             print(json.dumps(parsed))
-            see_next = input('\nSee next? Type yes or no.\n')
+            see_next = input('\nSee next trip data? Type yes or no.\n')
             while see_next.lower() == 'yes':
                 data = "{'': '" + str(i) + "',\
                     'Start Station': '" + str(df.iloc[[i]]['Start Station'].values[0]) + "',\
@@ -254,7 +254,7 @@ def main():
                 data = data.replace("'", "\"")
                 parsed = json.loads(data)
                 print(json.dumps(parsed))
-                see_next = input('\nSee next? Type yes or no.\n')
+                see_next = input('\nSee next trip data? Type yes or no.\n')
 
         
         restart = input('\nWould you like to restart? Enter yes or no.\n')
